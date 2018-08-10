@@ -2,7 +2,8 @@ package ii_collections
 
 fun Shop.getCustomersWhoOrderedProduct(product: Product): Set<Customer> {
     // Return the set of customers who ordered the specified product
-    todoCollectionTask()
+//    todoCollectionTask()
+    
 }
 
 fun Customer.getMostExpensiveDeliveredProduct(): Product? {
