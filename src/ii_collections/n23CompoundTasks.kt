@@ -1,5 +1,7 @@
 package ii_collections
 
+import i_introduction._7_Nullable_Types.test
+
 fun Shop.getCustomersWhoOrderedProduct(product: Product): Set<Customer> {
     // Return the set of customers who ordered the specified product
     // todoCollectionTask()
@@ -18,10 +20,9 @@ fun Customer.getMostExpensiveDeliveredProduct(): Product? {
 
 fun Shop.getNumberOfTimesProductWasOrdered(product: Product): Int {
 
-    val ordered = customers.flatMap { it.orderedProducts }
-    ordered.
+    return this.customers.fold(0,
+            { data1, customer ->
+                data1 + customer.orders.flatMap { it.products }.count { it == product }
+            })
 
-    // Return the number of times the given product was ordered.
-    // Note: a customer may order the same product for several times.
-    todoCollectionTask()
 }
